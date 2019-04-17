@@ -1,0 +1,9 @@
+.idea
+.metadata
+target
+.settings/
+.scannerwork/
+.project
+sonar-project.properties
+*.iml
+.classpath
