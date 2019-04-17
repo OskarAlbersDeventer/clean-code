@@ -56,6 +56,12 @@ public class MainController {
                     tomJsonObject = (JSONObject) tomJsonArray.get(i);
                     System.out.println(tomJsonObject);
                     Category c1 = new Category();
+                    if((boolean)tomJsonObject.get("hasOnlineSubCategories")){
+                        c1.setSubcategoriesAvailable(true);
+                    }
+                    c1.setDescription((String)tomJsonObject.get("description"));
+                    c1.setOnline((boolean)tomJsonObject.get("hasOnlineProducts"));
+
                     c1.setId((String) tomJsonObject.get("id"));
                     c1.setName((String) tomJsonObject.get("name"));
                     if (tomJsonObject.get("online").equals("1")) {
