@@ -2,10 +2,38 @@ package com.wunderman.codequality.model;
 
 public class Category {
 	 	private String name;
+	 	private String description;
 	    private String id;
 	    private String uri;
 	    private Boolean online;
 	    private Boolean special;
+	    private Boolean showOnSite;
+
+	public Boolean getSubcategoriesAvailable() {
+		return subcategoriesAvailable;
+	}
+
+	public void setSubcategoriesAvailable(Boolean subcategoriesAvailable) {
+		this.subcategoriesAvailable = subcategoriesAvailable;
+	}
+
+	private Boolean subcategoriesAvailable;
+
+	public Boolean getShowOnSite() {
+		return showOnSite;
+	}
+
+	public void setShowOnSite(Boolean showOnSite) {
+		this.showOnSite = showOnSite;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	public Boolean getSpecial() {
 		return special;
