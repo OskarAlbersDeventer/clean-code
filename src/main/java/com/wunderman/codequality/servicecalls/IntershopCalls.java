@@ -11,23 +11,21 @@ import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class IntershopCalls {
+public class IntershopCalls implements IServiceCalls{
 
     private static final String CLASSNAME = IntershopCalls.class.getName();
     private static final Logger LOGGER = Logger.getLogger(CLASSNAME);
 
-    private IntershopCalls(){
-        throw new IllegalStateException("Utility class");
-    }
 
-    public static String getCategoriesFromIntershop() {
+    @Override
+    public String getCategories(String hostUrl) {
         String methodName = "getCategoriesFromIntershop";
         LOGGER.entering(CLASSNAME, methodName);
         StringBuilder responseString = new StringBuilder();
 
         try {
             HttpClient client = HttpClientBuilder.create().build();
-            HttpGet request = new HttpGet("https://jxdemoserver6.intershop.de/INTERSHOP/rest/WFS/inSPIRED-inTRONICS-Site/-/categories");
+            HttpGet request = new HttpGet(hostUrl);
             HttpResponse response = client.execute(request);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
             String line;
