@@ -29,7 +29,8 @@ import com.wunderman.codequality.model.ISH.Element;
 public class MainController {
 	@GetMapping("categories")
 	public List<Category> getCategories() {
-		System.out.println("Starting getCategories");
+		//Retrieve the categories from intershop
+	    System.out.println("Starting getCategories");
 		List<Category> categoryList = new ArrayList<>();
 		StringBuffer responseString = new StringBuffer();
 		try {
@@ -47,6 +48,7 @@ public class MainController {
 		} catch (Exception e){
 			e.printStackTrace();
 		}
+		//try to convert the Intershop output to our own model
 		if (responseString.length() > 0) {
 			String outputJson = "";
 			try {
