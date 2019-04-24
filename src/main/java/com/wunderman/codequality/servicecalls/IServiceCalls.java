@@ -1,6 +1,8 @@
 package com.wunderman.codequality.servicecalls;
 
+import com.wunderman.codequality.model.intershop.CategoryList;
+
 public interface IServiceCalls {
 
-    String getCategories(String hostUrl);
+    CategoryList getCategories(String hostUrl);
 }
