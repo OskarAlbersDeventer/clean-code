@@ -26,10 +26,18 @@ public class MainController {
     MainController() {
     }
 
+    /**
+     * Constructer used for the test cases
+     * @param serviceCalls
+     */
     MainController(IServiceCalls serviceCalls) {
         this.serviceCalls = serviceCalls;
     }
 
+    /**
+     * This method returns all the categories retrieved from the servicecalls in our own model
+     * @return
+     */
     @GetMapping("categories")
     public List<Category> getCategories() {
         String methodName = "getCategories()";
