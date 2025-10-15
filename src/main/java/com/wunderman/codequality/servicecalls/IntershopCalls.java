@@ -27,7 +27,7 @@ public class IntershopCalls {
 
         try {
             HttpClient client = HttpClientBuilder.create().build();
-            HttpGet request = new HttpGet("https://jxdemoserver6.intershop.de/INTERSHOP/rest/WFS/inSPIRED-inTRONICS-Site/-/categories");
+            HttpGet request = new HttpGet("https://jxdemoserver.intershop.de/INTERSHOP/rest/WFS/inSPIRED-inTRONICS-Site/-/categories");
             HttpResponse response = client.execute(request);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
             String line;
