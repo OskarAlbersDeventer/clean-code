@@ -21,7 +21,7 @@ public class MainController {
 
     private static final String CLASSNAME = MainController.class.getName();
     private static final Logger LOGGER = Logger.getLogger(CLASSNAME);
-    private static final String HOSTURI = "https://jxdemoserver6.intershop.de/INTERSHOP/rest/WFS/inSPIRED-inTRONICS-Site/-/categories";
+    private static final String HOSTURI = "https://jxdemoserver.intershop.de/INTERSHOP/rest/WFS/inSPIRED-inTRONICS-Site/-/categories";
 
 
     IServiceCalls serviceCalls = new IntershopCalls();
