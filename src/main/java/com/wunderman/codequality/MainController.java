@@ -1,17 +1,10 @@
 package com.wunderman.codequality;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-
-
+import com.wunderman.codequality.model.Category;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -19,9 +12,11 @@ import org.json.simple.parser.ParseException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wunderman.codequality.model.Category;
-import com.wunderman.codequality.model.ISH.Element;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -35,7 +30,7 @@ public class MainController {
 		StringBuffer responseString = new StringBuffer();
 		try {
 			HttpClient client = HttpClientBuilder.create().build();
-			HttpGet request = new HttpGet("https://jxdemoserver6.intershop.de/INTERSHOP/rest/WFS/inSPIRED-inTRONICS-Site/-/categories");
+			HttpGet request = new HttpGet("https://jxdemoserver.intershop.de/INTERSHOP/rest/WFS/inSPIRED-inTRONICS-Site/-/categories");
 			HttpResponse response = client.execute(request);
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 			String line;
