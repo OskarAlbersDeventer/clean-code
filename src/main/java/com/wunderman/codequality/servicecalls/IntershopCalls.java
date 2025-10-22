@@ -1,14 +1,10 @@
 package com.wunderman.codequality.servicecalls;
 
 import com.wunderman.codequality.model.intershop.CategoryList;
-
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.core.MediaType;
+import org.springframework.web.client.RestClient;
 
 public class IntershopCalls implements IServiceCalls{
 
-    private Client client = ClientBuilder.newClient();
 
     /**
      * This method retrieves the categories from Intershop.
@@ -17,7 +13,9 @@ public class IntershopCalls implements IServiceCalls{
      */
     @Override
     public CategoryList getCategories(String hostUrl) {
-       CategoryList result =  client.target(hostUrl).request(MediaType.APPLICATION_JSON).get(CategoryList.class);
+        RestClient restClient = RestClient.builder().baseUrl(hostUrl).build();
+        CategoryList result = restClient.get().retrieve().body(CategoryList.class);
+
        return  result;
     }
 }
